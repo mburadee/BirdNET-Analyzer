@@ -1,3 +1,5 @@
+setuptools>=65.0.0
+wheel
 flask==2.3.3
 numpy==1.23.5
 scipy==1.10.1
