@@ -1,8 +1,8 @@
-flask
-numpy
-scipy
-pandas
-librosa
-tensorflow
-soundfile
-tqdm
+flask==2.3.3
+numpy==1.23.5
+scipy==1.10.1
+pandas==1.5.3
+librosa==0.9.2
+tensorflow==2.10.0
+soundfile==0.12.1
+tqdm==4.66.1
