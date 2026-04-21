@@ -4,7 +4,6 @@ import subprocess
 import uuid
 
 app = Flask(__name__)
-
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -23,20 +22,18 @@ def analyze():
     file.save(filepath)
 
     try:
-        # Run BirdNET CLI
         result = subprocess.run(
             ["python", "-m", "birdnet_analyzer", filepath],
             capture_output=True,
             text=True
         )
-
         return jsonify({
             "stdout": result.stdout,
             "stderr": result.stderr
         })
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
