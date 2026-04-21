@@ -1,1 +1,8 @@
-
+flask
+numpy
+scipy
+pandas
+librosa
+tensorflow
+soundfile
+tqdm
